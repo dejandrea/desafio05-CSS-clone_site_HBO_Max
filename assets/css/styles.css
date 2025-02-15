@@ -1,3 +1,315 @@
 @import url("global.css");
 
+/* header */
+
+header {
+  /* margin-top: 50px; */
+  font-family: var(--secondary-font)
+}
+
+.header-bg-gradient {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--header-bg-color-gradient);
+  background-size: 500% 500%;
+  filter: blur(30px);
+  animation: gradient 15s ease infinite alternate;
+  z-index: 1;
+}
+
+.header-bg-gradient::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, var(--primary-color));
+  position: absolute;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content-brands {
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.header-content-brands img {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 70px;
+}
+
+.header-content h3 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.header-content h3 span {
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+
+.header-divider {
+  width: 550px;
+  height: 4px;
+  background: var(--divider-bg-color);
+  margin: 30px;
+}
+
+.header-content h4 {
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.1rem;
+  font-family: var(--secondary-font)
+}
+
+.header-content h4 span {
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+.header-content button {
+  margin: 30px;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.button-gradient{
+  background: var(--btn-bg-color-gradient);
+  outline: 3px solid transparent;
+  transition: background 1s, outline 1s, transform 1s;
+  background-size: 300%;
+}
+
+.header-content .button-animation{
+    animation: wiggle 2.2s linear infinite;
+}
+
+.button-gradient:hover {
+  background-color: linear-gradient(
+    45deg,
+    #9b34ef 0%,
+    #490cb0 20%,
+    transparent 50%
+  );
+  background-position: 100%;
+  outline: 2px solid var(--secondary-color);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.header-content p{
+    font-size: 0.7rem;
+    font-weight: 100px;
+    letter-spacing: 1px;
+    width: 15rem;
+    text-align: center;
+    line-height: 15px;
+    font-family: var(--secondary-font)
+}
+
+header::before {
+    content: "";
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(transparent, var(--primary-color));
+    position: absolute;
+    top:500px;
+    z-index: 3;
+    filter: blur(30px);
+}
+
+/* Card plans */
+
+.plans{
+    margin: 350px auto 10px;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.plans h3, .hbo-content h3{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.plans .plans-cards{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.plans-cards:hover > :not(:hover){
+    transform: perspective(4000px) rotateY(45deg);
+}
+
+.plans-cards .card:hover plan-card{
+    transform: perspective(4000px) rotateY(-45deg);
+}
+
+
+.plans .plans-cards .plan-card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 50%;
+    height: 500px;
+    background: var(--card-bg-color);
+    margin: 10px;
+    padding: 24px 36px;
+    transition: 0.8s;
+}
+
+.plan-card .card-header{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+
+.plan-card .card-header p{
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.plan-card .card-header p span{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.plan-card .card-header p:last-of-type{
+    font-weight:100;
+    font-size: 0.8rem;
+}
+
+.plan-card .card-list{
+    height: 450px;
+    margin: 10px 0;
+    list-style: none; /* Remove os bullets padrão */
+    font-size: 0.95rem;
+}
+
+.plan-card .card-list li{
+    position: relative;
+    padding-left: 10px; /* Espaço para o ícone */
+    margin-bottom: 20px;
+}
+
+.plan-card .card-list li::before {
+    content: "+"; /* Pode ser um emoji ou caractere Unicode */
+    position: absolute;
+    left: -5px;
+    top:-8px;
+    font-size: 1.5rem;
+}
+
+.plan-card button{
+    margin-top: 30px;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 0.7rem;
+}
+
+/* Conteúdos HBO */
+
+.hbo-content{
+    margin: 130px auto 10px;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hbo-content .content-cards{
+    margin: 30px auto;
+    display: grid;
+    grid-template: repeat(2,400px) / repeat(3, 270px);
+    gap: 30px;
+
+}
+
+
+.hbo-content .content-cards .content-card-1{
+    background-image: url("../images/hbo-hover_0.webp");
+    background-position: center;
+    background-size: cover;
+}
+.hbo-content .content-cards .content-card-2{
+    background-image: url("../images/MAX-Hover.webp");
+    background-position: center;
+    background-size: cover;
+}
+.hbo-content .content-cards .content-card-3{
+    background-image: url("../images/DC-Hover.webp");
+    background-position: center;
+    background-size: cover;
+}
+.hbo-content .content-cards .content-card-4{
+    background-image: url("../images/WB-Hover.webp");
+    background-position: center;
+    background-size: cover;
+}
+.hbo-content .content-cards .content-card-5{
+    background-image: url("../images/CN-Hover.png");
+    background-position: center;
+    background-size: cover;
+}
+.hbo-content .content-cards .content-card-6{
+    background-image: url("../images/UCL-Hover.webp");
+    background-position: center;
+    background-size: cover;
+}
+
+.hbo-content .content-cards .content-card{
+    outline: 3px solid transparent;
+    border-radius: 10px;
+}
+
+.hbo-content .content-cards .content-card:hover{
+    outline: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.hbo-content .content-cards .content-card img{
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.hbo-content .content-cards .content-card img:hover{
+    opacity: 0;
+    transition: 1.5s;
+}
+
+
+
+
+
+
 

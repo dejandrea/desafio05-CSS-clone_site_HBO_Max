@@ -2,53 +2,162 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
 
 :root {
-    --primary-color: #020228;
-    --secondary-color: #ff00e5;
-    --tertiary-color: #b535f6;
-    --btn-bg-color-gradient: linear-gradient(
-      45deg,
-      #9b34ef 0%,
-      #490cb0 20%,
-      transparent 50%
-    );
-    --btn-link-bg-color: #fff;
-    --btn-link-color: #000;
-    --card-bg-color: linear-gradient(0deg, transparent, #3b1e63);
-    --divider-bg-color: linear-gradient(
-      90deg,
-      #5516ba,
-      rgba(255, 0, 229, 0.5) 80%
-    );
-    --nav-bg-color: rgba(0, 0, 0, 0.3);
-    --text-color: #fff;
-    --link-color: #9e86ff;
-    --form-bg-color: rgba(211, 211, 211, 0.06);
-    --form-field-bg-color: rgba(0, 0, 0, 0.2);
-    --form-field-border: 1px solid rgba(255, 255, 255, 0.7);
-    --form-field-placeholder: rgba(255, 255, 255, 0.7);
-    --form-field-error: rgb(255, 76, 76);
+  --primary-color: #020228;
+  --secondary-color: #ff00e5;
+  --tertiary-color: #b535f6;
+  --btn-bg-color-gradient: linear-gradient(
+    45deg,
+    #9b34ef 0%,
+    #490cb0 50%,
+    transparent 100%
+  );
+  --btn-bg-color: rgba(255, 0, 229);
+  --btn-link-bg-color: #fff;
+  --btn-link-color: #000;
+  --card-bg-color: linear-gradient(0deg, transparent, #3b1e63);
+  --divider-bg-color: linear-gradient(
+    90deg,
+    #5516ba,
+    rgba(255, 0, 229, 0.5) 80%
+  );
+  --header-bg-color-gradient: linear-gradient(
+    -45deg,
+    rgba(255, 0, 229, 0.5) 10%,
+    #020228 50%,
+    #3b1e63 90%
+  );
+  --nav-bg-color: rgba(0, 0, 0, 0.3);
+  --text-color: #fff;
+  --link-color: #9e86ff;
+  --form-bg-color: rgba(211, 211, 211, 0.06);
+  --form-field-bg-color: rgba(0, 0, 0, 0.2);
+  --form-field-border: 1px solid rgba(255, 255, 255, 0.7);
+  --form-field-placeholder: rgba(255, 255, 255, 0.7);
+  --form-field-error: rgb(255, 76, 76);
 
-    scroll-behavior: smooth;
-  }
+  --primary-font: "Raleway", sans-serif;
+  --secondary-font: "Quicksand", serif;
 
-  * {
-    font-family: "Raleway", sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family:"Raleway", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+a{
+  text-decoration: none;
+  color:#fff;
+  text-transform: uppercase;
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--btn-link-bg-color);
+}
+
+
+/* Navbar */
+.menu {
+  background-color: var(--nav-bg-color);
+  position: fixed;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  z-index: 2;
+}
+
+.menu img {
+  width: 120px;
+}
+
+.menu-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-right: 20px;
+}
+
+.menu-links,
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: xx-small;
+  letter-spacing: 2px;
+  color: var(--btn-link-bg-color);
+}
+
+.menu-links-btn {
+  background-color: var(--tertiary-color);
+  padding: 6px 18px;
+  border-radius: 15px;
+  border-style: none;
+}
+
+
+/* keyframes */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+
+@keyframes wiggle {
+  0%{
+      transform: rotate(0);
+  }
+  15%{
+      transform: rotate(-15deg);
+  }
+  20%{
+      transform: rotate(10deg);
+  }
+  25%{
+      transform: rotate(-10deg);
+  }
+  30%{
+      transform: rotate(10deg);
+  }
+  35%{
+      transform: rotate(-10deg);
+  }
+  40%,100%{
+      transform: rotate(0);
+  }
+}
+
+
 
 /* Custom Scroll */
 
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--tertiary-color);
-    border-radius: 10px;
+  background: var(--tertiary-color);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary-color);
+  background: var(--secondary-color);
 }
