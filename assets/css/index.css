@@ -32,7 +32,7 @@ header {
 .header-content {
   position: relative;
   z-index: 2;
-  top: 100px;
+  top: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +40,7 @@ header {
 }
 
 .header-content-brands {
-  height: 40px;
+  height: 80px;
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
@@ -50,38 +50,38 @@ header {
 .header-content-brands img {
   object-fit: contain;
   max-height: 100%;
-  max-width: 70px;
+  max-width: 100px;
 }
 
 .header-content h3 {
   text-transform: uppercase;
   font-weight: lighter;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .header-content h3 span {
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 3rem;
 }
 
 .header-divider {
-  width: 550px;
+  width: 700px;
   height: 4px;
   background: var(--divider-bg-color);
-  margin: 30px;
+  margin: 50px;
 }
 
 .header-content h4 {
   font-weight: lighter;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-family: var(--secondary-font)
 }
 
 .header-content h4 span {
   font-weight: bold;
-  font-size: 1.9rem;
+  font-size: 2.5rem;
 }
 
 .header-content button {
@@ -90,7 +90,8 @@ header {
   border: none;
   border-radius: 50px;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+  z-index: 10;
 }
 
 .button-gradient{
@@ -118,13 +119,13 @@ header {
 }
 
 .header-content p{
-    font-size: 0.7rem;
-    font-weight: 100px;
-    letter-spacing: 1px;
-    width: 15rem;
+    font-size: 1rem;
+    font-weight: 100;
+    /* letter-spacing: 1px; */
+    width: 20rem;
     text-align: center;
-    line-height: 15px;
-    font-family: var(--secondary-font)
+    line-height: 20px;
+    font-family: var(--secondary-font);
 }
 
 header::before {
@@ -133,7 +134,7 @@ header::before {
     height: 200px;
     background: linear-gradient(transparent, var(--primary-color));
     position: absolute;
-    top:500px;
+    top:700px;
     z-index: 3;
     filter: blur(30px);
 }
@@ -147,8 +148,8 @@ header::before {
 }
 
 .plans{
-    margin: 350px auto 10px;
-    max-width: 70%;
+    margin: 450px auto 10px;
+    max-width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,7 +157,7 @@ header::before {
 }
 .plans h3, .hbo-content h3{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 
@@ -181,10 +182,10 @@ header::before {
     flex-direction: column;
     border-radius: 10px;
     width: 50%;
-    height: 500px;
+    height: 600px;
     background: var(--card-bg-color);
     margin: 10px;
-    padding: 24px 36px;
+    padding: 36px 50px;
     transition: 0.8s;
 }
 
@@ -198,39 +199,39 @@ header::before {
 
 .plan-card .card-header p{
     font-weight: bolder;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .plan-card .card-header p span{
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--secondary-color);
 }
 
 .plan-card .card-header p:last-of-type{
     font-weight:100;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .plan-card .card-list{
     height: 450px;
     margin: 10px 0;
     list-style: none; /* Remove os bullets padrão */
-    font-size: 0.95rem;
+    font-size: 1.2rem;
 }
 
 .plan-card .card-list li{
     position: relative;
     padding-left: 10px; /* Espaço para o ícone */
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.plan-card .card-list li::before {
-    content: "+"; /* Pode ser um emoji ou caractere Unicode */
+.plan-card .card-list li::marker {
+    content: "+";
     position: absolute;
     left: -5px;
     top:-8px;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .plan-card button{
@@ -239,14 +240,14 @@ header::before {
     border: none;
     border-radius: 50px;
     color: white;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 }
 
 /* Conteúdos HBO */
 
 .hbo-content{
     margin: 130px auto 10px;
-    max-width: 70%;
+    max-width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,8 +256,8 @@ header::before {
 .hbo-content .content-cards{
     margin: 30px auto;
     display: grid;
-    grid-template: repeat(2,400px) / repeat(3, 270px);
-    gap: 30px;
+    grid-template: repeat(2,525px) / repeat(3, 350px);
+    gap: 45px;
 
 }
 
@@ -300,19 +301,21 @@ header::before {
 .hbo-content .content-cards .content-card:hover{
     outline: 2px solid var(--secondary-color);
     border-radius: 10px;
-    transform: scale(1.02);
+    transform: scale(1.05);
+    transition: 2s;
     cursor: pointer;
 }
 
 .hbo-content .content-cards .content-card img{
-    max-width: 100%;
+    /* max-width: 100%; */
+    max-height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .hbo-content .content-cards .content-card img:hover{
     opacity: 0;
-    transition: 1.5s;
+    transition: 2s;
 }
 
 
